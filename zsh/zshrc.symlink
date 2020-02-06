@@ -146,7 +146,7 @@ export LESS_TERMCAP_me=$(tput sgr0)
 export LESS_TERMCAP_so=$(tput bold; tput setaf 3; tput setab 4)
 export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
 export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 7)
-export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)
+export LESS_TERMCAP_ue=$(tput rmul; tput sgr2)
 export LESS_TERMCAP_mr=$(tput rev)
 export LESS_TERMCAP_mh=$(tput dim)
 
@@ -177,10 +177,12 @@ alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias l="ls -lah ${colorflag}"
-alias la="ls -AF ${colorflag}"
-alias ll="ls -lFh ${colorflag}"
-alias lld="ls -l | grep ^d"
+alias l="lsd -lah"
+alias ls="lsd"
+alias lt="lsd --tree"
+alias la="lsd -AF"
+alias ll="lsd -lFh"
+alias lld="lsd -l | grep ^d"
 alias rmf="rm -rf"
 
 # Helpers
@@ -211,3 +213,5 @@ alias tat='tmux attach -t'
 alias tns='tmux new-session -s'
 # fnm
 eval "$(fnm env --multi)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

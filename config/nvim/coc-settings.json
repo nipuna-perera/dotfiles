@@ -1,6 +1,7 @@
 {
     "suggest.enablePreview": true,
     "codeLens.enable": true,
+    "http.proxy": "http.proxy.fmr.com:8000",
     "git.addedSign.text": "┃",
     "git.removedSign.text": "┃",
     "git.changedSign.text": "┃",
