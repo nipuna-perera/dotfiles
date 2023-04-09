@@ -16,6 +16,8 @@ return {
         "jdtls",
         "golangci-lint-langserver",
         "go-debug-adapter",
+        "ansible-language-server",
+        "ansible-lint",
       },
     },
   },
