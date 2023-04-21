@@ -17,4 +17,10 @@ return {
       require("telescope").load_extension("fzf")
     end,
   },
+  opts = {
+    defaults = {
+      layout_strategy = "horizontal",
+      winblend = 0,
+    },
+  },
 }

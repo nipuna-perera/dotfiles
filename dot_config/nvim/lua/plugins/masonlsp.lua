@@ -7,7 +7,6 @@ return {
         "shellcheck",
         "shfmt",
         "gopls",
-        "delve",
         "terraform-ls",
         "tflint",
         "yamlfmt",
