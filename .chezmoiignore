@@ -1,0 +1,7 @@
+{{- if eq .chezmoi.hostname "MACLB293963" }}
+.bashrc
+.zshrc
+.gitconfig
+.oh-my-zsh
+{{- end }}
+

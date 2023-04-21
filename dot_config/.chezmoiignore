@@ -1,0 +1,3 @@
+_{{- if eq .chezmoi.hostname "MACLB293963" }}
+aquaproj-aqua
+{{- end }}
