@@ -10,20 +10,15 @@ return {
     end,
   },
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        gopls = {},
-      },
-    },
-  },
-  {
     "jose-elias-alvarez/null-ls.nvim",
     opts = function(_, opts)
       local nls = require("null-ls")
       vim.list_extend(opts.sources, {
         nls.builtins.formatting.gofumpt,
-        nls.builtins.diagnostics.golangci_lint,
+        -- nls.builtins.diagnostics.golangci_lint,
+        nls.builtins.code_actions.gomodifytags,
+        nls.builtins.code_actions.impl,
+        nls.builtins.code_actions.refactoring,
       })
     end,
   },
@@ -40,9 +35,7 @@ return {
     },
     opts = function(_, opts)
       opts.adapters = vim.list_extend(opts.adapters or {}, {
-        require("neotest-go")({
-          args = {},
-        }),
+        require("neotest-go"),
       })
     end,
   },
