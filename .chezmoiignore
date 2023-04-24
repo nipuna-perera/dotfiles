@@ -1,4 +1,4 @@
-{{- if eq .chezmoi.hostname "MACLB293963" }}
+{{- if eq .chezmoi.hostname "maclb293963" }}
 .bashrc
 .zshrc
 .gitconfig

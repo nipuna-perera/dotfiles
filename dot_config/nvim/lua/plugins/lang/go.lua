@@ -46,7 +46,7 @@ return {
                 compositeLiteralTypes = true,
                 constantValues = true,
                 functionTypeParameters = true,
-                parameterNames = true,
+                parameterNames = false,
                 rangeVariableTypes = true,
               },
             },
@@ -61,7 +61,7 @@ return {
       local nls = require("null-ls")
       vim.list_extend(opts.sources, {
         nls.builtins.formatting.gofumpt,
-        -- nls.builtins.diagnostics.golangci_lint,
+        nls.builtins.diagnostics.golangci_lint,
         nls.builtins.code_actions.gomodifytags,
         nls.builtins.code_actions.impl,
         nls.builtins.code_actions.refactoring,
