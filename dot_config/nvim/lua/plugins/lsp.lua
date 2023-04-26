@@ -13,7 +13,7 @@ return {
         "yamllint",
         "typescript-language-server",
         "jdtls",
-        "golangci-lint-langserver",
+        "golangci-lint",
         "go-debug-adapter",
         "ansible-language-server",
         "ansible-lint",
@@ -29,13 +29,13 @@ return {
       })
     end,
   },
-  {
-    "jay-babu/mason-null-ls.nvim",
-    opts = {
-      ensure_installed = nil,
-      automatic_installation = true,
-      automatic_setup = false,
-    },
-  },
+  -- {
+  --   "jay-babu/mason-null-ls.nvim",
+  --   opts = {
+  --     ensure_installed = nil,
+  --     automatic_installation = true,
+  --     automatic_setup = false,
+  --   },
+  -- },
   { import = "plugins.lang" },
 }
