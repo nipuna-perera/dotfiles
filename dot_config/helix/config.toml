@@ -1,0 +1,22 @@
+theme = "catppuccin_mocha"
+
+[keys.insert]
+j = {k = "normal_mode"}
+
+[editor]
+line-number = "relative"
+rulers = [120]
+bufferline = "always"
+mouse = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+center = ["version-control"]
+
+[editor.lsp]
+display-inlay-hints = true
+auto-signature-help = true

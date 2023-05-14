@@ -1,4 +1,5 @@
-{{- if eq .chezmoi.hostname "maclb293963" }}
+{{ $lowhost := lower .chezmoi.hostname }}
+{{- if eq $lowhost "maclb293963" }}
 .bashrc
 .zshrc
 .gitconfig
