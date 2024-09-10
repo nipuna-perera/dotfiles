@@ -25,8 +25,10 @@
    2. [Window default](#window-default)
    3. [Window current](#window-current)
    4. [Status](#status)
+   4. [Pane](#pane)
    5. [Customizing modules](#customizing-modules)
    6. [Battery module](#battery-module)
+   7. [CPU module](#CPU-module)
 5. [Create a custom module](#create-a-custom-module)
 6. [Configuration Examples](#configuration-examples)
    1. [Config 1](#config-1)
@@ -141,6 +143,15 @@ Values:
 - all - the entire window part will have the same color
 - none - the entire window part will have no color
 
+#### Override the window default colors:
+```sh
+set -g @catppuccin_window_default_text "color" # text color
+set -g @catppuccin_window_default_background "color"
+```
+
+Values:
+- color - a hexadecimal color value
+
 #### Override the window default text:
 ```sh
 set -g @catppuccin_window_default_text "#{b:pane_current_path}" # use "#W" for application instead of directory
@@ -156,6 +167,15 @@ Values:
 - number - only the number of the window part will have color
 - all - the entire window part will have the same color
 - none - the entire window part will have no color
+
+#### Override the window current colors:
+```sh
+set -g @catppuccin_window_current_color "color" # text color
+set -g @catppuccin_window_current_background "color"
+```
+
+Values:
+- color - a hexadecimal color value
 
 #### Override the window current text:
 ```sh
@@ -173,6 +193,17 @@ Use this to overide the way the current directory is displayed.
 set -g @catppuccin_window_format_directory_text "#{b:pane_current_path}"
 ```
 Use this to overide the way the directory is displayed.
+
+### Pane
+
+#### Set the pane border style:
+
+set -g @catppuccin_pane_border_style "fg=blue" # Use a value compatible with the standard tmux 'pane-border-style'
+
+#### Set the pane active border style:
+
+set -g @catppuccin_pane_active_border_style "fg=red" # Use a value compatible with the standard tmux 'pane-border-active-style'
+
 
 ### Status
 
@@ -210,6 +241,24 @@ set -g @catppuccin_status_fill "icon"
 Values:
 - icon - only the icon of the module will have color
 - all - the entire module will have the same color
+
+### Pane
+
+```sh
+tmux_orange="#fab387"
+set -g @catppuccin_pane_status_enabled "yes"
+set -g @catppuccin_pane_border_status "top"
+set -g @catppuccin_pane_left_separator ""
+set -g @catppuccin_pane_right_separator ""
+set -g @catppuccin_pane_middle_separator "█ "
+set -g @catppuccin_pane_number_position "left"
+set -g @catppuccin_pane_default_fill "number"
+set -g @catppuccin_pane_default_text "#{b:pane_current_path}"
+set -g @catppuccin_pane_border_style "fg=$tmux_orange"
+set -g @catppuccin_pane_active_border_style "fg=$tmux_orange"
+set -g @catppuccin_pane_color "$tmux_orange"
+set -g @catppuccin_pane_background_color "$tmux_orange"
+```
 
 #### Set the module list
 ```sh
@@ -277,6 +326,27 @@ Add the battery module to the status modules list.
 set -g @catppuccin_status_modules_right "... battery ..."
 ```
 
+### CPU module
+
+#### Requirements
+This module depends on [tmux-cpu](https://github.com/tmux-plugins/tmux-cpu/tree/master).
+
+#### Install
+The prefered way to install tmux-cpu is using [TPM](https://github.com/tmux-plugins/tpm).
+
+#### Configure
+Load tmux-cpu after you load catppuccin.
+```sh
+set -g @plugin 'catppuccin/tmux'
+...
+set -g @plugin 'tmux-plugins/tmux-cpu'
+```
+
+Add the cpu module to the status modules list.
+```sh
+set -g @catppuccin_status_modules_right "... cpu ..."
+```
+
 ## Create a custom module
 
 It is possible to add a new custom module or overrite any of the existing modules.
@@ -289,7 +359,7 @@ Any file added to the custom folder will be preserved when updating catppuccin.
 Below are provided a few configurations as examples or starting points.
 
 Note:
-When switching bettwen configurations run:
+When switching between configurations run:
 ```sh
 tmux kill-server
 ```

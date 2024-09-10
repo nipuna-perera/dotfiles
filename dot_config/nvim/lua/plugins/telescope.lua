@@ -6,8 +6,17 @@ return {
       -- add a keymap to browse plugin files
       -- stylua: ignore
       {
+        "<leader>space", false
+      },
+      {
+        "<leader><space>",
+        ":lua require('telescope').extensions.smart_open.smart_open()<CR>",
+      },
+      {
         "<leader>fp",
-        function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
+        function()
+          require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
+        end,
         desc = "Find Plugin File",
       },
       {
@@ -23,20 +32,42 @@ return {
         desc = "Find Files (hidden included)",
       },
     },
-    -- dependencies = {
-    --   "nvim-telescope/telescope-fzf-native.nvim",
-    --   build = "make",
-    --   config = function()
-    --     require("telescope").load_extension("fzf")
-    --   end,
-    -- },
-
     -- fuzzy finder prioritizing filenames and smartcase search
     dependencies = {
-      "natecraddock/telescope-zf-native.nvim",
-      config = function()
-        require("telescope").load_extension("zf-native")
-      end,
+      {
+        "danielfalk/smart-open.nvim",
+        branch = "0.2.x",
+        dependencies = {
+          "kkharji/sqlite.lua",
+          -- -- Only required if using match_algorithm fzf
+          { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+        },
+      },
+      -- {
+      --   "natecraddock/telescope-zf-native.nvim",
+      --   config = function()
+      --     require("telescope").load_extension("zf-native")
+      --   end,
+      -- },
+      {
+        "biozz/whop.nvim",
+        config = function()
+          require("whop").setup({})
+          vim.keymap.set("n", "<leader>fw", ":Telescope whop<CR>", { noremap = true, desc = "whop.nvim (telescope)" })
+        end,
+      },
+      {
+        "debugloop/telescope-undo.nvim",
+        keys = {
+          {
+            "<leader>U",
+            function()
+              return require("telescope").extensions.undo.undo()
+            end,
+            desc = "Undo History",
+          },
+        },
+      },
     },
     opts = {
       defaults = {
@@ -67,23 +98,18 @@ return {
           sort_mru = true,
         },
       },
-    },
-  },
-  {
-    "debugloop/telescope-undo.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim" },
-    config = function()
-      require("telescope").load_extension("undo")
-    end,
-
-    keys = {
-      {
-        "<leader>U",
-        function()
-          return require("telescope").extensions.undo.undo()
-        end,
-        desc = "Undo History",
+      extensions = {
+        smart_open = {
+          match_algorithm = "fzf",
+        },
       },
     },
+    config = function(_, opts)
+      local telescope = require("telescope")
+      telescope.setup(opts)
+      telescope.load_extension("smart_open")
+      telescope.load_extension("whop")
+      telescope.load_extension("undo")
+    end,
   },
 }

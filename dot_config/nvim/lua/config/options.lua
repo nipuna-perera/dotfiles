@@ -6,3 +6,4 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldnestmax = 1
 vim.cmd([[ set nofoldenable ]])
+vim.wo.relativenumber = true

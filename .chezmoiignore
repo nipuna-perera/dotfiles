@@ -6,3 +6,6 @@
 .oh-my-zsh
 {{- end }}
 
+.config/tmux/cache/**
+
+

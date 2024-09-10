@@ -4,14 +4,6 @@ local function get_cur_file_extension(bufnr)
 end
 
 return {
-  -- {
-  --   "stevearc/conform.nvim",
-  --   opts = {
-  --     formatters_by_ft = {
-  --       go = { "gofumpt", "gci" },
-  --     },
-  --   },
-  -- },
   {
     "mfussenegger/nvim-lint",
     opts = {
