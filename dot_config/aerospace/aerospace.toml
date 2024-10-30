@@ -113,6 +113,7 @@ alt-c = 'workspace C' # chrome
 alt-n = 'workspace N' # neovim
 alt-o = 'workspace O' # obsidian
 alt-r = 'workspace R' # obsidian
+alt-v = 'workspace V' # vscode
 alt-z = 'workspace Z' # Zoom
 
 alt-f = 'fullscreen'
@@ -125,6 +126,7 @@ alt-shift-c = 'move-node-to-workspace C'
 alt-shift-n = 'move-node-to-workspace N'
 alt-shift-r = 'move-node-to-workspace R'
 alt-shift-o = 'move-node-to-workspace O'
+alt-shift-v = 'move-node-to-workspace V'
 alt-shift-z = 'move-node-to-workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -171,14 +173,19 @@ run = 'move-node-to-workspace R'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Outlook'
-run = 'move-node-to-workspace 1'
+run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'
 run = 'move-node-to-workspace 1'
 
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace V'
+
 [workspace-to-monitor-force-assignment]
 1 = 'main'
+2 = 'main'
 N = 'main'
 O = 'secondary'
 C = 'secondary'

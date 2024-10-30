@@ -1,8 +1,14 @@
-theme = "catppuccin_mocha"
+theme = "nightfox"
 
 [keys.insert]
 j = {k = "normal_mode"}
 esc = ["collapse_selection", "normal_mode"]
+S-tab = "move_parent_node_start"
+
+[keys.select]
+esc = ["collapse_selection", "normal_mode"]
+tab = "extend_parent_node_end"
+S-tab = "extend_parent_node_start"
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
@@ -10,21 +16,22 @@ X = "extend_line_above"
 a = ["append_mode", "collapse_selection"]
 i = ["insert_mode", "collapse_selection"]
 ret = ["move_line_down", "goto_line_start"]
+tab = "move_parent_node_end"
+S-tab = "move_parent_node_start"
 
 [keys.normal.space]
-q = ":quit"
+q = {q = ":quit-all"}
 
 [keys.normal.space.f]
 s = ":write"
 f = "file_picker"
 
-[keys.select]
-esc = ["collapse_selection", "normal_mode"]
-
 [editor]
 auto-save = true
-bufferline = "always"
+bufferline = "never"
 line-number = "relative"
+undercurl = true
+color-modes = true
 # rulers = [120]
 cursorline = true
 
@@ -40,9 +47,5 @@ git-ignore = false
 [editor.soft-wrap]
 enable = true
 
-[editor.statusline]
-center = ["version-control"]
-
 [editor.lsp]
 display-inlay-hints = true
-auto-signature-help = true
