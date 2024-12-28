@@ -74,7 +74,8 @@ alias vim='nvim'
 alias c='clear'
 alias n='nvim'
 
-export PATH="/home/mangocrysis/.local/bin:$PATH"
+export BOB_NVIM_BIN="/Users/minimango/.local/share/bob/nvim-bin"
+export PATH="/home/mangocrysis/.local/bin:$BOB_NVIM_BIN:$PATH"
 
 # Shell integrations
 eval "$(zoxide init zsh)"
