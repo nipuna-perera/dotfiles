@@ -112,7 +112,7 @@ alt-3 = 'workspace 3'
 alt-c = 'workspace C' # chrome
 alt-n = 'workspace N' # neovim
 alt-o = 'workspace O' # obsidian
-alt-r = 'workspace R' # obsidian
+alt-r = 'workspace R' # remote desktop
 alt-v = 'workspace V' # vscode
 alt-z = 'workspace Z' # Zoom
 
@@ -152,7 +152,7 @@ alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
-if.app-id = 'net.kovidgoyal.kitty'
+if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace N'
 
 [[on-window-detected]]
