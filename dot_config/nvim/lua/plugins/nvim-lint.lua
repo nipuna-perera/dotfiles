@@ -14,7 +14,7 @@ return {
       linters = {
         vale = {
           args = {
-            "--config=/Users/a515466/.config/vale/.vale.ini",
+            "--config=/Users/mangoair/.config/vale/.vale.ini",
             "--no-exit",
             "--output",
             "JSON",

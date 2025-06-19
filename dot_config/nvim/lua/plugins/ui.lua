@@ -12,11 +12,16 @@ return {
       -- colorscheme = "tokyonight-moon",
       -- colorscheme = "catppuccin-macchiato",
       -- colorscheme = "catppuccin-mocha",
-      colorscheme = "nightfox",
+      -- colorscheme = "nightfox",
+      colorscheme = "everforest",
     },
   },
+  -- {
+  --   "EdenEast/nightfox.nvim",
+  --   lazy = false,
+  -- },
   {
-    "EdenEast/nightfox.nvim",
+    "sainnhe/everforest",
     lazy = false,
   },
   -- Other plugins

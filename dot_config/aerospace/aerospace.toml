@@ -110,6 +110,7 @@ alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-c = 'workspace C' # chrome
+alt-d = 'workspace D' # chrome
 alt-n = 'workspace N' # neovim
 alt-o = 'workspace O' # obsidian
 alt-r = 'workspace R' # remote desktop
@@ -123,6 +124,7 @@ alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
 alt-shift-c = 'move-node-to-workspace C'
+alt-shift-d = 'move-node-to-workspace D'
 alt-shift-n = 'move-node-to-workspace N'
 alt-shift-r = 'move-node-to-workspace R'
 alt-shift-o = 'move-node-to-workspace O'
@@ -150,6 +152,10 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
