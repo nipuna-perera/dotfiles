@@ -53,7 +53,7 @@ if [[ -z "$LANG" ]]; then
 fi
 
 # path variables
-export BOB_PATH="/Users/mangoair/.local/share/bob/nvim-bin"
+export BOB_PATH="$HOME/.local/share/bob/nvim-bin"
 
 path=(
   $HOME/{,s}bin(N)
