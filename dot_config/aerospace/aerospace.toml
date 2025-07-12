@@ -53,12 +53,12 @@ on-focus-changed = "move-mouse window-lazy-center"
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal =  8
-inner.vertical =    8
-outer.left =        0 
-outer.bottom =      0
-outer.top =         0
-outer.right =       0
+inner.horizontal = 8
+inner.vertical = 8
+outer.left = 0
+outer.bottom = 0
+outer.top = 0
+outer.right = 0
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -110,11 +110,14 @@ alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-c = 'workspace C' # chrome
+alt-b = 'workspace B' # chrome
 alt-d = 'workspace D' # chrome
 alt-n = 'workspace N' # neovim
 alt-o = 'workspace O' # obsidian
+alt-s = 'workspace S' # signal
 alt-r = 'workspace R' # remote desktop
 alt-v = 'workspace V' # vscode
+alt-w = 'workspace W' # whatsapp
 alt-z = 'workspace Z' # Zoom
 
 alt-f = 'fullscreen'
@@ -124,11 +127,14 @@ alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
 alt-shift-c = 'move-node-to-workspace C'
+alt-shift-b = 'move-node-to-workspace B'
 alt-shift-d = 'move-node-to-workspace D'
 alt-shift-n = 'move-node-to-workspace N'
 alt-shift-r = 'move-node-to-workspace R'
 alt-shift-o = 'move-node-to-workspace O'
+alt-shift-s = 'move-node-to-workspace S'
 alt-shift-v = 'move-node-to-workspace V'
+alt-shift-w = 'move-node-to-workspace W'
 alt-shift-z = 'move-node-to-workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -145,7 +151,10 @@ alt-shift-semicolon = 'mode service'
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+f = [
+  'layout floating tiling',
+  'mode main',
+] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
 alt-shift-h = ['join-with left', 'mode main']
@@ -158,12 +167,24 @@ if.app-id = 'com.hnc.Discord'
 run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = 'move-node-to-workspace W'
+
+[[on-window-detected]]
+if.app-id = 'org.whispersystems.signal-desktop'
+run = 'move-node-to-workspace S'
+
+[[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace N'
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace O'
+
+[[on-window-detected]]
+if.app-id = 'com.TempoStorm.TheBazaar'
+run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
