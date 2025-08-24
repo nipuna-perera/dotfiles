@@ -11,7 +11,19 @@ gh = "latest"
 go = "latest"
 python = "latest"
 vim = "latest"
-dagger = "latest"
+dagger = "0.18.14"
 bat = "latest"
 fzf = "latest"
 lazygit = "latest"
+bun = "latest"
+"ubi:sst/opencode" = "latest"
+pipx = "latest"
+claude = "latest"
+uv = "latest"
+golangci-lint = "latest"
+gemini-cli = "latest"
+
+[settings]
+
+[settings.python]
+compile = false

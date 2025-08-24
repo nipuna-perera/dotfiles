@@ -39,3 +39,4 @@ keybind = cmd+f=text:lfcd\n
 keybind = cmd+[=text:\x02[
 # clear screen
 keybind = cmd+k=text:\x02\x0C
+keybind = shift+enter=text:\n
