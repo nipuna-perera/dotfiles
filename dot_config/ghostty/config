@@ -1,23 +1,22 @@
-# theme = Everforest Dark - Hard
+theme = Everforest Dark Hard
 # theme = nordfox
-theme = catppuccin-mocha
+# theme = catppuccin-mocha
 
 font-size = 16
-font-family = JetBrainsMono Nerd Font Mono
+font-family = JetBrains Mono
 
 copy-on-select = true
 mouse-hide-while-typing = true
-
 macos-non-native-fullscreen=visible-menu
 macos-titlebar-style = hidden
 macos-option-as-alt = true
-
 window-decoration = false
 window-padding-y = 0
 window-padding-x = 5
 window-padding-color = extend
 window-padding-balance = true
 window-save-state = always
+cursor-text = 00000
 
 # new tmux session
 keybind = cmd+t=text:\x02\x63
@@ -39,4 +38,4 @@ keybind = cmd+f=text:lfcd\n
 keybind = cmd+[=text:\x02[
 # clear screen
 keybind = cmd+k=text:\x02\x0C
-keybind = shift+enter=text:\n
+# keybind = shift+enter=text:\n
